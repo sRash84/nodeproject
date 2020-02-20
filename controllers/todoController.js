@@ -35,7 +35,7 @@ module.exports = function(app){
         //get data from mongodb and pass it to view
         Todo.find({}, function(err, data){
             if(err) throw err;
-            res.render('todo', {todos: data});
+            res.render('todocontroller/todo', {todos: data});
         });
     });
 

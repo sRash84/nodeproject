@@ -3,6 +3,11 @@ var todoController = require('./controllers/todoController');
 
 var app = express();
 
+var routes = require("./routes/index.js");
+
+app.use("/", routes);
+
+
 //set up template engine
 app.set('view engine', 'ejs');
 
