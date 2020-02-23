@@ -5,5 +5,13 @@ router
 .route("/")
 .get(indexController.HomePage);
 
+router
+.route("/about")
+.get(indexController.About);
+
+router.get('/mycar/:id', indexController.Mycar);
+
+
+
 
 module.exports = router;
