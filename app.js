@@ -2,9 +2,10 @@ var express  = require('express');
 var app = express();
 var routes = require("./routes/index.js");
 var todorouter = require("./routes/todo.js");
-
+var projroute = require("./routes/projects.js");
 app.use("/", routes);
 app.use("/todo", todorouter);
+app.use("/projects", projroute);
 
 //set up template engine
 app.set('view engine', 'ejs');
@@ -13,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 app.use(function(req, res){
-    res.status(404).render('404.ejs');
+    res.status(404).render('404.ejs',{title:"404 not found"});
 });
 
 app.listen(3000);
